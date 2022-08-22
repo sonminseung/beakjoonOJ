@@ -1,17 +1,15 @@
 from collections import Counter
-t = int(input())
+T=int(input())
+for i in range(T):
+    n=int(input())
+    type=[]
+    for a in range(n):
+        wear_name,wear_type=input().split(' ')
+        type.append(wear_type)
 
-for i in range(t):
-    n = int(input())
-    wear = []
-    for j in range(n):
-        a, b = input().split()
-        wear.append(b)
+    wear_counter=Counter(type)
+    cnt=1
+    for key in wear_counter:
+        cnt *= wear_counter[key] + 1
 
-    wear_Counter = Counter(wear)
-    cnt = 1 # 각 종류마다 항목의 개수
-
-    for key in wear_Counter:
-        cnt *= wear_Counter[key] + 1
-
-    print(cnt-1)
+    print(cnt-1)        
